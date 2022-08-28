@@ -1,0 +1,38 @@
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 06:09:03
+Windows version: WinVer=105;Rel=2009;Build=19042;Edition=Core
+Dr. Memory results for pid 1728: "main.exe"
+Application cmdline: ""C:\Users\Ricardo\Desktop\AED1\Semana 3\Exercicio-7\src\main.exe""
+Recorded 118 suppression(s) from default D:\\bin\suppress-default.txt
+
+Error #1: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text   
+# 3 __mingw_glob
+# 4 _setargv
+# 5 .text   
+# 6 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.493 in thread 9660
+Note: instruction: cmp    %eax $0x00000018
+
+Error #2: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text   
+# 3 __mingw_glob
+# 4 _setargv
+# 5 .text   
+# 6 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.495 in thread 9660
+Note: instruction: data16 mov    %cx -> 0x00000234(%esi,%eax,2)
+
+Error #3: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text   
+# 3 __mingw_glob
+# 4 _setargv
+# 5 .text   
+# 6 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.508 in thread 9660
+Note: instruction: test   %eax %eax
