@@ -1,0 +1,51 @@
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 06:09:03
+Windows version: WinVer=105;Rel=2009;Build=19042;Edition=Core
+Dr. Memory results for pid 22640: "main.exe"
+Application cmdline: "C:\Users\Ricardo\Desktop\AED1\Agenda2\src\main.exe"
+Recorded 118 suppression(s) from default D:\\bin\suppress-default.txt
+
+Error #1: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text   
+# 3 __mingw_glob
+# 4 _setargv
+# 5 .text   
+# 6 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.559 in thread 13120
+Note: instruction: cmp    %eax $0x00000018
+
+Error #2: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text   
+# 3 __mingw_glob
+# 4 _setargv
+# 5 .text   
+# 6 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.563 in thread 13120
+Note: instruction: data16 mov    %cx -> 0x00000234(%esi,%eax,2)
+
+Error #3: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text   
+# 3 __mingw_glob
+# 4 _setargv
+# 5 .text   
+# 6 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.576 in thread 13120
+Note: instruction: test   %eax %eax
+
+Error #4: UNINITIALIZED READ: reading register eax
+# 0 main    
+Note: @0:00:13.197 in thread 13120
+Note: instruction: test   %eax %eax
+
+Error #5: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x012a0f1a-0x012a0f1e 4 byte(s)
+# 0 delete  
+# 1 main    
+Note: @0:00:25.993 in thread 13120
+Note: next higher malloc: 0x012a0f30-0x012a0f42
+Note: prev lower malloc:  0x012a0f08-0x012a0f10
+Note: instruction: mov    $0x00000000 -> (%eax)
