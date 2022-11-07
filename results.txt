@@ -1,0 +1,80 @@
+Dr. Memory version 2.5.0 build 0 built on Oct 18 2021 03:10:43
+Windows version: WinVer=105;Rel=2009;Build=19042;Edition=Core
+Dr. Memory results for pid 15552: "cmd.exe"
+Application cmdline: "C:\WINDOWS\system32\cmd.exe /c exit"
+Recorded 124 suppression(s) from default D:\drmemory\bin\suppress-default.txt
+ERROR: Failed to find "main" for limiting memory dump
+
+WARNING: application is missing line number information.
+
+Error #1: UNINITIALIZED READ: reading register eax
+# 0 cmd.exe!?                        +0x0      (0x0060e353 <cmd.exe+0xe353>)
+# 1 cmd.exe!?                        +0x0      (0x0060884f <cmd.exe+0x884f>)
+# 2 cmd.exe!?                        +0x0      (0x00610a55 <cmd.exe+0x10a55>)
+# 3 cmd.exe!?                        +0x0      (0x00616a0a <cmd.exe+0x16a0a>)
+# 4 KERNEL32.dll!BaseThreadInitThunk
+Note: @0:00:02.811 in thread 14044
+Note: instruction: cmp    %eax %ecx
+
+Error #2: UNINITIALIZED READ: reading register al
+# 0 KERNELBASE.dll!FindFirstFileExW
+# 1 KERNELBASE.dll!FindFirstFileW
+# 2 cmd.exe!?                        +0x0      (0x0061029d <cmd.exe+0x1029d>)
+# 3 cmd.exe!?                        +0x0      (0x00608dc1 <cmd.exe+0x8dc1>)
+# 4 cmd.exe!?                        +0x0      (0x006101ce <cmd.exe+0x101ce>)
+# 5 cmd.exe!?                        +0x0      (0x00608901 <cmd.exe+0x8901>)
+# 6 cmd.exe!?                        +0x0      (0x00610a55 <cmd.exe+0x10a55>)
+# 7 cmd.exe!?                        +0x0      (0x00616a0a <cmd.exe+0x16a0a>)
+# 8 KERNEL32.dll!BaseThreadInitThunk
+Note: @0:00:03.135 in thread 14044
+Note: instruction: cmp    %al $0x1a
+
+Error #3: UNINITIALIZED READ: reading register edi
+# 0 KERNELBASE.dll!FindFirstFileExW
+# 1 KERNELBASE.dll!FindFirstFileW
+# 2 cmd.exe!?                        +0x0      (0x0061029d <cmd.exe+0x1029d>)
+# 3 cmd.exe!?                        +0x0      (0x00608dc1 <cmd.exe+0x8dc1>)
+# 4 cmd.exe!?                        +0x0      (0x006101ce <cmd.exe+0x101ce>)
+# 5 cmd.exe!?                        +0x0      (0x00608901 <cmd.exe+0x8901>)
+# 6 cmd.exe!?                        +0x0      (0x00610a55 <cmd.exe+0x10a55>)
+# 7 cmd.exe!?                        +0x0      (0x00616a0a <cmd.exe+0x16a0a>)
+# 8 KERNEL32.dll!BaseThreadInitThunk
+Note: @0:00:03.195 in thread 14044
+Note: instruction: test   %edi $0x00000400
+
+Error #4: LEAK 65486 direct bytes 0x040d6348-0x040e6316 + 0 indirect bytes
+# 0 replace_malloc                    [d:\a\drmemory\drmemory\common\alloc_replace.c:2580]
+# 1 cmd.exe!?                        +0x0      (0x0061744a <cmd.exe+0x1744a>)
+# 2 cmd.exe!?                        +0x0      (0x00616e48 <cmd.exe+0x16e48>)
+# 3 cmd.exe!?                        +0x0      (0x0060e422 <cmd.exe+0xe422>)
+# 4 cmd.exe!?                        +0x0      (0x0060adef <cmd.exe+0xadef>)
+# 5 cmd.exe!?                        +0x0      (0x0060e4f6 <cmd.exe+0xe4f6>)
+# 6 cmd.exe!?                        +0x0      (0x00610b09 <cmd.exe+0x10b09>)
+# 7 cmd.exe!?                        +0x0      (0x00616a0a <cmd.exe+0x16a0a>)
+# 8 KERNEL32.dll!BaseThreadInitThunk
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   2:      2
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      3 unique,     4 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total GDI usage error(s)
+      0 unique,     0 total handle leak(s)
+      0 unique,     0 total warning(s)
+      1 unique,     1 total,  65486 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      6 potential error(s) (suspected false positives)
+         (details: D:\drmemory\drmemory\logs\DrMemory-cmd.exe.15552.000\potential_errors.txt)
+      3 potential leak(s) (suspected false positives)
+         (details: D:\drmemory\drmemory\logs\DrMemory-cmd.exe.15552.000\potential_errors.txt)
+    126 unique,   131 total,  17819 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: D:\drmemory\drmemory\logs\DrMemory-cmd.exe.15552.000\results.txt
